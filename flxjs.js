@@ -151,6 +151,14 @@ Matrix.prototype.copy = function(m) {
     return this;
 }
 
+//http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/geom/Matrix.html#rotate()
+Matrix.prototype.rotate = function(angle) // in radians
+{
+    this.concat( new Matrix( Math.cos(angle), Math.sin(angle), -Math.sin(angle), Math.cos(angle), 0, 0) );
+    return this;
+};
+
+
 // See http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/geom/Point.html
 function Point(x, y)
 {
